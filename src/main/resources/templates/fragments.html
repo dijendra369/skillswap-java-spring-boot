@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillSwap</title><link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<nav th:fragment="nav" class="navbar">
+  <a class="brand" href="/">Skill<span>Swap</span></a>
+  <div class="navlinks">
+    <a href="/skills">Explore skills</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/skills/new" class="nav-cta">+ Add skill</a>
+    <form th:action="@{/logout}" method="post" class="inline-form"><button class="link-button" type="submit">Log out</button></form>
+  </div>
+</nav>
+<footer th:fragment="footer" class="footer">SkillSwap · Share what you know. Discover what you can learn.</footer>
+</body>
+</html>

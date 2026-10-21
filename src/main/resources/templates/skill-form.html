@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Add a skill · SkillSwap</title><link rel="stylesheet" th:href="@{/css/app.css}"></head>
+<body><nav th:replace="~{fragments :: nav}"></nav><main class="form-page"><a class="back-link" href="/dashboard">← Back to dashboard</a><div class="section-kicker">GROW THE EXCHANGE</div><h1>Add a skill</h1><p class="muted">Be proud of what you know — or excited about what you want to learn.</p>
+<form th:action="@{/skills}" method="post" class="form-stack form-panel">
+<label>Skill name<input name="title" required maxlength="80" placeholder="e.g. Java programming"></label>
+<label>Category<select name="category" required><option value="Technology">Technology</option><option value="Design">Design</option><option value="Business">Business</option><option value="Languages">Languages</option><option value="Music">Music</option><option value="Arts & Crafts">Arts & Crafts</option><option value="Fitness">Fitness</option><option value="Cooking">Cooking</option><option value="Other">Other</option></select></label>
+<label>What is this skill about?<textarea name="description" maxlength="700" rows="4" placeholder="What can you teach, or what do you want to learn?"></textarea></label>
+<fieldset><legend>I'm here to…</legend><label class="choice"><input type="radio" name="type" value="TEACH" checked><span><b>Teach this skill</b><small>Help someone learn something you know.</small></span></label><label class="choice"><input type="radio" name="type" value="LEARN"><span><b>Learn this skill</b><small>Let the community know what you're looking for.</small></span></label></fieldset>
+<button class="button primary full" type="submit">Save skill →</button></form></main><footer th:replace="~{fragments :: footer}"></footer></body></html>

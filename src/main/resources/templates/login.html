@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Log in · SkillSwap</title><link rel="stylesheet" th:href="@{/css/app.css}"></head>
+<body class="auth-page"><a class="brand auth-brand" href="/">Skill<span>Swap</span></a><main class="auth-card">
+  <div class="section-kicker">WELCOME BACK</div><h1>Good to see you.</h1><p class="muted">Pick up where your learning journey left off.</p>
+  <div th:if="${param.error}" class="alert">Email or password is incorrect. Please try again.</div>
+  <div th:if="${registered}" class="success">Account created! You can log in now.</div>
+  <div th:if="${param.logout}" class="success">You have been logged out.</div>
+  <form th:action="@{/login}" method="post" class="form-stack">
+    <label>Email address<input type="email" name="username" autocomplete="email" required placeholder="you@example.com"></label>
+    <label>Password<input type="password" name="password" autocomplete="current-password" required placeholder="Your password"></label>
+    <button class="button primary full" type="submit">Log in <span>→</span></button>
+  </form><p class="auth-bottom">New to SkillSwap? <a href="/register">Create an account</a></p>
+</main></body></html>
